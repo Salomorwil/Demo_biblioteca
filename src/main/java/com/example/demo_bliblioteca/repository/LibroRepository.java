@@ -25,6 +25,14 @@ public class LibroRepository {
         return listaLibros;
     }
 
+    public Libro buscarPorIsbnv1(String isbn){
+        for (Libro libro : listaLibros){
+            if (libro.getIsbn().equals(isbn)){
+                return libro;
+            }
+        }
+        return null;
+    }
     public Libro buscarPorID(int id){
         for (Libro libro : listaLibros){
             if (libro.getId() == id){
@@ -59,21 +67,19 @@ public class LibroRepository {
     public void eliminar(int id){
         listaLibros.removeIf(x -> x.getId() == id);
     }
+
     public int totalLibros(){
         return listaLibros.size();
     }
-    public Libro buscarPorIsbn(String isbn){
+
+
+    /*public int cantidadPorAnio(int Anio){
+        int cantidad = 0;
         for (Libro libro : listaLibros){
-            if (libro.getIsbn().equals(isbn)){
-                return libro;
+            if (Anio.equals(libro.getFechaPublicacion())){
+                cantidad+=1;
             }
         }
-        return null;
-    }
-    /*public int cantidadPorAnio(int Anio){
-        int cantidad;
-        for (Libro libro : listaLibros){
-            if (libro.getFechaPublicacion)
-        }
+        return cantidad;
     }*/
 }

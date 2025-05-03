@@ -36,4 +36,8 @@ public class LibroService {
     public int totalLibrosv1(){
         return libroRepository.totalLibros();
     }
+
+    public Libro buscarIsbn(String isbn){
+        return libroRepository.buscarPorIsbnv1(isbn);
+    }  
 }
